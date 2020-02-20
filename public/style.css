@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+#container {
+  display: flex;
+}
+
+#container > div {
+  height: 80vh;
+}
+
+.left {
+  flex: left;
+  flex-grow: 2;
+  background-color: royalblue;
+}
+
+.right {
+  flex: right;
+  flex-grow: 1;
+  background-color: coral;
+  text-align: center;
+}
+
+#total-dice {
+  margin: 5px;
+  margin-bottom: 30px;
+}
+
+#current-bid {
+  margin: 5px;
+}
+
+.player {
+  margin: 5px;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  background-color: aqua;
+  text-align: center;
+}
+
+.dice {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: gold;
+  vertical-align: middle;
+  line-height: 30px;
+  margin: 2px 4px;
+}
+
+#bottom {
+  height: 20vh;
+  background-color: darkgreen;
+}

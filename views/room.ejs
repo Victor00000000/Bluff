@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <script>
+    const roomName = "<%= roomName %>"
+  </script>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>Bluff: <%= roomName %></title>
+</head>
+<body>
+  <div id="container">
+    <div class="left">
+      <div class="player">
+        Name<br>
+        <span class="dice"></span>
+        <span class="dice"></span>
+        <span class="dice"></span>
+        <span class="dice"></span>
+        <span class="dice"></span>
+        <span class="dice"></span>
+      </div>
+      <div class="player">
+        Name<br>
+        <span class="dice"></span>
+        <span class="dice"></span>
+      </div>
+      <div class="player">
+        Name<br>
+        <span class="dice"></span>
+        <span class="dice"></span>
+      </div>
+      <div class="player">
+        Name<br>
+        <span class="dice"></span>
+        <span class="dice"></span>
+      </div>
+      <div class="player">
+        Name<br>
+        <span class="dice"></span>
+        <span class="dice"></span>
+      </div>
+    </div>
+    <div class="right">
+      <div id="total-dice">
+        Total Dice<br>0
+      </div>
+      <div id="current-bid">
+        Current Bid<br>4<span class="dice">1</span>
+      </div>
+    </div>
+  </div>
+  <div id="bottom">
+    <button id="ready-button">Ready</button>
+  </div>
+</body>
+</html>
