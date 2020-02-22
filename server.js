@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
@@ -8,15 +9,20 @@ app.use(express.urlencoded({extended: true}))
 
 const rooms = {}
 
+app.use(cors())
+
 app.get('/', (req, res) => {
-  res.render('index', { rooms: rooms })
+  let roomnames = rooms.map( (roo) => {
+    return roo.name
+  })
+  res.json(roomnames)
 })
 
 app.post('/room', (req, res) => {
   if (rooms[req.body.room] != null) {
     return res.redirect('/')
   }
-  rooms[req.body.room] = { users: [], bid: [0, 0], totalDice: 5, status: 'Not-Ready' }
+  rooms[req.body.room] = { name: req.body.room, users: [], bid: [0, 0], totalDice: 5, status: 'Not-Ready' }
   res.redirect(req.body.room)
   // Send message that new room was created
   console.log('room created')
@@ -33,7 +39,7 @@ app.get('/:room', (req, res) => {
   res.render('room', { roomName: req.params.room })
 })
 
-server.listen(3000)
+server.listen(4000)
 
 io.on('connection', socket => {
   socket.on('new-user', (room, name) => {

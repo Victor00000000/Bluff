@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000')
+const socket = io('http://localhost:4000')
 const roomConainer = document.getElementById('room-container')
 const readyButton = document.getElementById('ready-button')
 
